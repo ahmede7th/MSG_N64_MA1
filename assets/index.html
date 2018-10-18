@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>The store</title>
+</head>
+<body>
+  <h1>Store</h1>
+
+  <br />
+  <table>
+    <tr>
+      <th>Name</th>
+      <th></th>
+      <th>Price</th>
+    </tr>
+    <td>Name</td>
+    <th></th>
+    <td>$$$$</td>
+    </tr>
+  </table>
+  <br/>
+
+  <form action="/submit" method="post">
+    Name:
+    <input type="text" name="name">
+    <br/> Price:
+    <input type="text" name="price">
+    <br/>
+    <input type="submit" value="Submit">
+  </form>
+
+  <script>
+    stuffTable = document.querySelector("table")
+    fetch("/stuff")
+      .then(response => response.json())
+      .then(stuffList => {
+        stuffList.forEach(stuff => {
+          row = document.createElement("tr")
+          species = document.createElement("td")
+          name.innerHTML = stuff.name
+          description = document.createElement("td")
+          price.innerHTML = stuff.price
+          row.appendChild(name)
+          row.appendChild(price)
+          stuffTable.appendChild(row)
+        })
+      })
+  </script>
+
+</body>
