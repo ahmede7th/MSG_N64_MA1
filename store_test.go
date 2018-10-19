@@ -44,8 +44,8 @@ func TestStoreSuite(t *testing.T) {
 
 func (s *StoreSuite) TestCreateStuff() {
 	s.store.CreateStuff(&Stuff{
-		Name: "test name",
-		Species:     "test species",
+		Name:    "test name",
+		Species: "test species",
 	})
 
 	res, err := s.db.Query(`SELECT COUNT(*) FROM stuffs WHERE name='test name' AND SPECIES='test species'`)
